@@ -2,25 +2,29 @@
 // 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
 // 6, 1, 33 -> [6, 1, 33]
 
-static void Main(string[] args)
-    {
-        int[] array = new int[8];
-        
-        Console.WriteLine("Введите 8 чисел для массива:");
-        for (int i = 0; i < array.Length; i++)
-        {
-            Console.Write("Число {0}: ", i + 1);
-            array[i] = Convert.ToInt32(Console.ReadLine());
-        }
-        
+
+
+
+int[] array = GenerateRandomArray(8); // Вызываем метод для создания массива из 8 случайных чисел
+
         Console.Write("Массив: [");
         for (int i = 0; i < array.Length; i++)
         {
             Console.Write(array[i]);
-            if (i < array.Length - 1)
+            if (i != array.Length - 1)
                 Console.Write(", ");
         }
-        Console.Write("]");
+        Console.WriteLine("]");
 
-        Console.ReadLine();
+    static int[] GenerateRandomArray(int length)
+    {
+        Random random = new Random();
+        int[] array = new int[length];
+
+        for (int i = 0; i < length; i++)
+        {
+            array[i] = random.Next(1, 100); // Генерируем случайное число от 1 до 100
+        }
+
+        return array;
     }

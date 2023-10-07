@@ -2,7 +2,12 @@
 // 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
 // 6, 1, 33 -> [6, 1, 33]
 
+using System;
 
+class Program
+{
+    static void Main()
+    {
         int[] array = GenerateRandomArray(8); // Вызываем метод для создания массива из 8 случайных чисел
 
         Console.Write("Массив: [");
@@ -13,6 +18,7 @@
                 Console.Write(", ");
         }
         Console.WriteLine("]");
+    }
 
     static int[] GenerateRandomArray(int length)
     {
@@ -26,4 +32,4 @@
 
         return array;
     }
-
+}
